@@ -167,6 +167,17 @@ footer {
   font-size: 0;
 }
 
+.logo-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-box a:nth-child(2) {
+  display: block;
+  max-width: 178px;
+  margin: auto;
+}
+
 .orders-box {
   margin: 1em auto;
 }
@@ -601,17 +612,13 @@ footer {
     align-items: center;
   }
 
-  .logo-box {
-    display: flex;
-  }
-
-  .logo-box a:nth-child(2) {
-    display: block;
-    max-width: 178px;
-  }
-
   .orders-box {
     margin: auto;
+  }
+
+  .logo-box {
+    display: flex;
+    flex-direction: row;
   }
 
   .icons-box {
