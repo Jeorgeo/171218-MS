@@ -379,6 +379,7 @@ footer {
 .main-examples .slider {
   position: relative;
   width: 90%;
+  max-width: 800px;
   min-height: 350px;
   margin: 1.5em auto;
 }
@@ -440,8 +441,16 @@ footer {
   width: 70%;
 }
 
-.main-examples .slide .layer-bottom img {
-  max-width: 70%;
+.main-examples .slide .layer-bottom a,
+.main-examples .slide .layer-top a {
+  display: block;
+  width: 100%;
+  max-width: 270px;
+  border-radius: 3px;
+}
+
+.main-examples .slide .layer-bottom a {
+  width: 70%;
   margin-left: 0;
 }
 
@@ -592,6 +601,15 @@ footer {
     align-items: center;
   }
 
+  .logo-box {
+    display: flex;
+  }
+
+  .logo-box a:nth-child(2) {
+    display: block;
+    max-width: 178px;
+  }
+
   .orders-box {
     margin: auto;
   }
@@ -669,14 +687,14 @@ footer {
     text-align: center;
   }
 
-  .main-examples .slide .layer-top img {
+  .main-examples .slide .layer-top a {
     float: left;
     margin-right: 1em;
   }
 
   .slide_description {
     display: block;
-    width: 90%;
+    width: 100%;
     margin-bottom: 2em;
     font-size: 1.1em;
   }
@@ -724,7 +742,6 @@ footer {
 
   .main-advantages_title {
     display: block;
-    max-width: 800px;
     margin: auto;
     font-size: 40px;
   }
@@ -734,7 +751,16 @@ footer {
     flex-direction: row;
     max-width: 585px;
     margin: auto;
+    margin-right: 12%;
     text-align: center;
+  }
+
+  .main-advantages_list figure h3 {
+    font-size: 1.4em;
+  }
+
+  .main-advantages_list figure h3 .color-text {
+    font-size: 60px;
   }
 
   .list-rows {
@@ -748,8 +774,79 @@ footer {
     max-width: 380px;
   }
 
+  .main-advantages {
+    padding-bottom: 0;
+  }
+
+  .main-advantages_list {
+    padding-bottom: 1.5em;
+    background: url('../img/ms_bg-screen.png') no-repeat 50% -10%;
+  }
+
+  .main-advantages_list li .list_number {
+    font-size: 3em;
+  }
+
+  .main-examples h3 {
+    font-size: 40px;
+    margin: 1.5em;
+  }
+
+  .main-examples .slider .arrow.prev {
+    left: -30px;
+  }
+
+  .main-examples .slider .arrow.next {
+    right: -30px;
+  }
+
+  .main-examples .slide .layer-top {
+    left: 145px;
+    width: 80%;
+  }
+
+  .main-examples .layer-top .slide_text {
+    margin-left: 135px;
+    text-align: left;
+  }
+
+  .main-examples .slide .layer-top a {
+    margin-right: 40px;
+  }
+
+  .slide .slide_adress {
+    left: 35%;
+    width: 60%;
+    margin-top: 0;
+    font-size: 27px;
+  }
+
+  .slide .slide_adress .top-line {
+    width: 170px;
+  }
+
+  .slide .slide_btn {
+    right: -270px;
+    width: 100%;
+  }
+
+  .main-examples .slide .slide_btn a {
+    padding: 15px;
+    font-size: 17px;
+  }
+
+  .slide .slide_btn .top-line {
+    margin-left: 0.5em;
+    width: 20px;
+  }
+
   .main-form {
+    margin: 1em 0;
     margin-left: 45%;
+  }
+
+  .main-form h3 {
+    font-size: 1.8em;
   }
 
   /*--------------------------------------------------------------
@@ -772,6 +869,15 @@ footer {
   /*--------------------------------------------------------------
   # Content
   --------------------------------------------------------------*/
+
+  .main-form input {
+    margin: 0.7em auto;
+  }
+
+  .main-form label.cloud-form__сonsent {
+    margin-top: 1.2em;
+    margin-bottom: 1em;
+  }
 
   /*--------------------------------------------------------------
   # Footer
