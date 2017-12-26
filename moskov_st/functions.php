@@ -119,6 +119,8 @@ add_action( 'widgets_init', 'moskov_st_widgets_init' );
 function moskov_st_scripts() {
 	wp_enqueue_style( 'moskov_st-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'moskov_st-normalize', get_stylesheet_uri(). '/css/normalize.css');
+
 	wp_enqueue_script( 'moskov_st-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'moskov_st-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -128,6 +130,90 @@ function moskov_st_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'moskov_st_scripts' );
+
+/**
+ * Add new wrapper for woocommerce pages.
+ *
+ * @since Stained Glass 1.0.0
+ */
+
+ add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', 'stainedglass_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'stainedglass_wrapper_end', 10);
+
+function stainedglass_wrapper_start() {
+  echo '<main id="main>';
+}
+
+function stainedglass_wrapper_end() {
+  echo '</main>';
+}
+
+/**
+ * Change related products number
+ *
+ * @since Stained Glass 1.0.0
+ */
+add_filter( 'woocommerce_output_related_products_args', 'stainedglass_related_products_args' );
+function stainedglass_related_products_args( $args ) {
+
+	$args['posts_per_page'] = 3;
+	$args['columns'] = 3;
+	return $args;
+}
+
+/**
+ * Custom woocommerce
+ * Добавление краткого описания в карточку каталога
+*/
+/*
+add_action( 'woocommerce_after_shop_loop_item_title', 'my_add_short_description', 9 );
+function my_add_short_description() {
+echo '<span class="title-description">' . the_excerpt() . '</span><br />';
+}
+*/
+// Добавляем Рубли в WooCommerce
+
+add_filter( 'woocommerce_currencies', 'add_my_currency' );
+function add_my_currency( $currencies ) {
+     $currencies['ABC'] = __( 'Российские рубли', 'woocommerce' );
+     return $currencies;
+}
+add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
+function add_my_currency_symbol( $currency_symbol, $currency ) {
+     switch( $currency ) {
+          case 'ABC': $currency_symbol = 'руб.'; break;
+     }
+     return $currency_symbol;
+}
+
+// Удаляем ненужные вкладки
+
+function woo_remove_product_tab($tabs) {
+
+    unset( $tabs['description'] );              // Remove the description tab
+    unset( $tabs['reviews'] );                     // Remove the reviews tab
+    unset( $tabs['additional_information'] );      // Remove the additional information tab
+
+     return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tab', 98);
+
+add_filter( 'add_to_cart_text', 'woo_custom_product_add_to_cart_text' );            // < 2.1
+add_filter( 'woocommerce_product_add_to_cart_text', 'woo_custom_product_add_to_cart_text' );  // 2.1 +
+
+function woo_custom_product_add_to_cart_text() {
+
+    return __( 'Заказать', 'woocommerce' );
+
+}
 
 /**
  * Implement the Custom Header feature.

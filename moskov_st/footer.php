@@ -11,22 +11,39 @@
 
 ?>
 
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'moskov_st' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'moskov_st' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'moskov_st' ), 'moskov_st', '<a href="http://underscores.me/">Underscores.me</a>' );
-			?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<footer>
+	<div class="main-header">
+		<div class="container">
+			<div class="logo-box">
+				<a href="#">
+					<img src="<?php bloginfo("template_directory"); ?>/img/ms_logo.png" alt="">
+					<h1>Московская столовка</h1>
+					<p>Сеть уютных столовых с кулинарией в Москве</p>
+				</a>
+				<a href="#">
+					<img src="<?php bloginfo("template_directory"); ?>/img/mk_logo1.png" alt="">
+				</a>
+			</div>
+			<div class="orders-box">
+				<p>Заказы принимаются через:</p>
+				<a href="#">
+					<img src="<?php bloginfo("template_directory"); ?>/img/ms_icon-uber.png" alt="">
+				</a>
+				<a href="#">
+					<img src="<?php bloginfo("template_directory"); ?>/img/ms_icon-delivery_club.png" alt="">
+				</a>
+			</div>
+			<div class="icons-box">
+				<a href="#">
+					<img src="<?php bloginfo("template_directory"); ?>/img/ms_icon-appstore.png" alt="">
+				</a>
+				<a href="#">
+					<img src="<?php bloginfo("template_directory"); ?>/img/ms_icon-googleplay.png" alt="">
+				</a>
+			</div>
+		</div>
+	</div>
+</footer>
 
 <?php wp_footer(); ?>
 

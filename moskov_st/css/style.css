@@ -1,24 +1,4 @@
-/*!
-Theme Name: moskov_st
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://hmwebs.ru
-Description: Description
-Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: moskov_st
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-moskov_st is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -38,17 +18,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 @font-face {
   font-family: 'Circe-Regular'; /* Гарнитура шрифта */
-  src: url( "fonts/Circe-Regular.otf" ); /* Путь к файлу со шрифтом */
+  src: url( "../fonts/Circe-Regular.otf" ); /* Путь к файлу со шрифтом */
 }
 
 @font-face {
    font-family: 'Circe-Bold'; /* Гарнитура шрифта */
-   src: url( "fonts/Circe-Bold.otf" ); /* Путь к файлу со шрифтом */
+   src: url( "../fonts/Circe-Bold.otf" ); /* Путь к файлу со шрифтом */
   }
 
 @font-face {
    font-family: 'Circe-ExtraBold'; /* Гарнитура шрифта */
-   src: url( "fonts/Circe-ExtraBold.otf" ); /* Путь к файлу со шрифтом */
+   src: url( "../fonts/Circe-ExtraBold.otf" ); /* Путь к файлу со шрифтом */
   }
 
 
@@ -213,7 +193,7 @@ footer {
 
 .bottom-header {
   padding: 1.5em 0;
-  background: url('img/ms_bg-main.jpg') no-repeat 50% 50%;
+  background: url('../img/ms_bg-main.jpg') no-repeat 50% 50%;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -258,11 +238,7 @@ footer {
   border-bottom: 1px solid #ffffff;
 }
 
-.woocommerce ul.products li.product a {
-  padding: 0;
-}
-
-.woocommerce ul.products {
+.cards-box {
   display: flex;
   flex-direction: column;
   width: 95%;
@@ -280,11 +256,7 @@ footer {
   color: #3a3e48;
 }
 
-.woocommerce.columns-3 {
-  width: 100%;
-}
-
-.woocommerce.columns-3 ul.products li.product {
+.cards {
   display: block;
   width: 240px;
   height: 360px;
@@ -299,15 +271,13 @@ footer {
   margin: 14px 8px;
 }
 
-.products h2,
-.products h3 {
+.cards h5 {
   display: block;
   width: 100%;
   margin: 44px auto;
   text-transform: uppercase;
   font-family: 'Circe-Regular', 'Arial', sans-serif;
   font-size: 13px;
-  color: #3a3e48;
 }
 
 .cards .quant {
@@ -318,16 +288,9 @@ footer {
   border-bottom: 1px dotted #7d7e80;
 }
 
-.woocommerce ul.products li.product .price {
-  position: absolute;
-  bottom: 1em;
-  color: #3a3e48;
-}
-
-.woocommerce ul.products li.product .button {
-  position: absolute;
-  bottom: 1em;
-  right: 1em;
+.cards__order-box a {
+  display: inline-block;
+  vertical-align: baseline;
   width: 85px;
   padding: 8px;
   text-align: center;
@@ -341,14 +304,14 @@ footer {
   border-radius: 3px;
 }
 
-.woocommerce ul.products li.product .button:hover {
+.cards__order-box a:hover {
   border: 1px solid #7e9c00;
   background: linear-gradient(180deg, #7e9c00, #9cb500);
 }
 
 .main-map {
   padding: 3em 0 4em 0;
-  background: url('img/ms_bg-map1.jpg') no-repeat 60% 50%;
+  background: url('../img/ms_bg-map1.jpg') no-repeat 60% 50%;
   background-size: cover;
 }
 
@@ -377,7 +340,7 @@ footer {
 }
 
 .main-advantages_list {
-  background: url('img/ms_bg-screen.png') no-repeat 50% 50%;
+  background: url('../img/ms_bg-screen.png') no-repeat 50% 50%;
   background-size: contain;
 }
 
@@ -565,7 +528,7 @@ footer {
 
 .main-order {
   padding: 1em 0;
-  background: url('img/ms_bg-order.jpg') no-repeat 50% 50%;
+  background: url('../img/ms_bg-order.jpg') no-repeat 50% 50%;
   background-size: cover;
 }
 
@@ -689,7 +652,7 @@ footer {
     width: calc(100% - 200px);
   }
 
-  .woocommerce ul.products {
+  .cards-box {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
@@ -824,7 +787,7 @@ footer {
 
   .main-advantages_list {
     padding-bottom: 1.5em;
-    background: url('img/ms_bg-screen.png') no-repeat 50% -10%;
+    background: url('../img/ms_bg-screen.png') no-repeat 50% -10%;
   }
 
   .main-advantages_list li .list_number {
