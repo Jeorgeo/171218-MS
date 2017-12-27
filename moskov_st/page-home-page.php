@@ -12,22 +12,36 @@
  * @package moskov_st
  */
 
-get_header(); ?>
+get_header();
+
+$news = get_posts(
+		array(
+				'numberposts' => 100,
+				'offset' => 0,
+				'orderby'     => 'date',
+				'order'       => 'DESC',
+				'category' => '',
+				'include' => '',
+				'exclude' => '',
+				'meta_key' => '',
+				'meta_value' => '',
+				'post_type' => 'portfolio',
+				'post_parent' => '',
+				'post_status' => 'publish'
+		)
+);?>
 
 <main>
 	<section class="shop-section">
 		<div class="container">
 			<aside class="shop-categories">
 				<nav>
-					<ul>
-						<li><a href="">Популярное</a></li>
-						<li><a href="">Супы</a></li>
-						<li><a href="">Горячее</a></li>
-						<li><a href="">Десерты</a></li>
-						<li><a href="">Напитки</a></li>
-						<li><a href="">Выпечка</a></li>
-						<li><a href="">Бизнес-ланч</a></li>
-					</ul>
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						) );
+					?>
 				</nav>
 			</aside>
 			<div class="cards-container">
@@ -40,6 +54,9 @@ get_header(); ?>
 		</div>
 	</section>
 	<section class="main-map">
+		<div class="yandex-map">
+			<?php echo get_field( 'map' ); ?>
+		</div>		
 		<div class="container">
 			<div class="text-box">
 				<div class="text-box_title">
@@ -95,36 +112,39 @@ get_header(); ?>
 			</h3>
 			<div class="slider">
 				<div class="slider-box">
+					<?php
+						foreach ($news as $obj) {
+							if($obj->post_name == 'archive') {
+									continue;
+							}
+					 ?>
 					<div class="slide">
 						<figure class="layer-bottom">
-							<p class="slide_adress"> <span class="top-line"></span>Улица Коптевская, дом 4</p>
-							<a href="#"><img src="<?php bloginfo("template_directory"); ?>/pics/pic-slider1.jpg" alt=""></a>
+							<p class="slide_adress"> <span class="top-line"></span><?php echo get_field('adress',$obj->ID); ?></p>
+							<a href="#"><img src="<?php echo get_field('image_b',$obj->ID); ?>"></a>
 							<p class="slide_text">Было</p>
 						</figure>
 						<figure class="layer-top">
 							<p class="slide_text">Стало</p>
-							<a href="#"><img src="<?php bloginfo("template_directory"); ?>/pics/pic-slider2.jpg" alt=""></a>
-							<p class="slide_description">
-								Площадь: 80 м2<br>
-								Тип заведения: Столовая<br>
-								Срок открытия: 12 дней<br>
-								Пропускаемость: до 1000 человек в день
-							</p>
+							<a href="#"><img src="<?php echo get_field('image_s',$obj->ID); ?>"></a>
+
 							<div class="slide_btn">
 								<span class="top-line"></span>
-								<a href="#">Открыть свой бизнес</a>
+								<a class="follow_button" href="#form">Открыть свой бизнес</a>
 							</div>
 						</figure>
 					</div>
+					<?php
+		 				}
+		 			 ?>
 				</div>
-				<span class="arrow prev">prev</span>
-				<span class="arrow next">next</span>
 			</div>
 		</div>
 	</section>
 	<section class="main-order">
 		<div class="container">
 			<form class="main-form" method="post">
+				<span id="form"></span>
 				<h3>
 					Оставьте заявку и получите специальные условия по франшизе
 				</h3>
@@ -154,6 +174,21 @@ get_header(); ?>
 	</section>
 
 </main>
+
+<!-- popup form -->
+
+<div class="wrap"></div>
+<div id="window" class="popup-question-s">
+	<div class="popup-question-close">
+		close
+	</div>
+	<div class="details-form">
+		<p>
+			Спасибо!
+		</p>
+		</form>
+	</div>
+</div>
 
 <?php
 get_footer();

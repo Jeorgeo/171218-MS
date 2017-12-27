@@ -19,24 +19,27 @@ if ( is_singular() )
 </header>
 
 <main class="woocommerce">
-	<section class="main-catalog">
+	<section class="shop-section">
 		<div class="main-wrapper woo-shop full-width flex-layout-<?php echo esc_attr( $stainedglass_columns ); ?>">
-
 			<div class="container">
-				<div class="content">
+				<aside class="shop-categories">
+					<nav>
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							) );
+						?>
+					</nav>
+				</aside>
+				<div class="cards-container">
+					<div class="breadcrumbs">
+						<?php woocommerce_breadcrumb(); ?>
+					</div>
 					<?php if ( is_singular() ) : ?>
 					<div class="content-container">
 					<?php endif; ?>
 
-							<?php woocommerce_breadcrumb(); ?>
-							<nav class="main-catalog__categories">
-								<?php
-									wp_nav_menu( array(
-										'theme_location' => 'menu-1',
-										'menu_id'        => 'primary-menu',
-									) );
-								?>
-							</nav>
 							<?php woocommerce_content(); ?>
 							<?php do_action( 'stainedglass_after_content' ); ?>
 

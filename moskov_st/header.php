@@ -25,12 +25,12 @@
 		<div class="main-header">
 			<div class="container">
 				<div class="logo-box">
-					<a href="#">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<img src="<?php bloginfo("template_directory"); ?>/img/ms_logo.png" alt="">
 						<h1>Московская столовка</h1>
 						<p>Сеть уютных столовых с кулинарией в Москве</p>
 					</a>
-					<a href="#">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<img src="<?php bloginfo("template_directory"); ?>/img/mk_logo1.png" alt="">
 						<h1>Московское кафе</h1>
 						<p>Сеть демократичных кафе в Москве</p>
