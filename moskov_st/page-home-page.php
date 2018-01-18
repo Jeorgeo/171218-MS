@@ -54,9 +54,6 @@ $news = get_posts(
 		</div>
 	</section>
 	<section class="main-map">
-		<div class="yandex-map">
-			<?php echo get_field( 'map' ); ?>
-		</div>		
 		<div class="container">
 			<div class="text-box">
 				<div class="text-box_title">
@@ -70,6 +67,11 @@ $news = get_posts(
 					</p>
 				</div>
 			</div>
+		</div>
+		<div class="yandex-map">
+			<div id="map"></div>
+			<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    	<script src="<?php bloginfo("template_directory"); ?>/js/icon_customImage.js" type="text/javascript"></script>
 		</div>
 	</section>
 	<section class="main-advantages">
@@ -91,9 +93,9 @@ $news = get_posts(
 					<ul>
 						<li><span class="list_text">Работа под известным брендом</span></li>
 						<li><span class="list_text">Уникальный товар импульсного спроса</span></li>
-						<li><span class="list_text">Минимальные инвестиции - от 500 тыс. руб.</span></li>
-						<li><span class="list_text">Быстрый запуск - от 14 дней</span></li>
-						<li><span class="list_text">Специальные условия закупки товара(цена ниже оптовой на 20%)</span></li>
+						<li><span class="list_text">Минимальные инвестиции</span></li>
+						<li><span class="list_text">Быстрый запуск</span></li>
+						<li><span class="list_text">Специальные условия закупки товара</span></li>
 					</ul>
 					<ul>
 						<li><span class="list_text">Помощь в поиске места и переговорах с арендодателями</span></li>
