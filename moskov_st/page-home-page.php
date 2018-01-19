@@ -70,8 +70,10 @@ $news = get_posts(
 		</div>
 		<div class="yandex-map">
 			<div id="map"></div>
+
 			<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     	<script src="<?php bloginfo("template_directory"); ?>/js/icon_customImage.js" type="text/javascript"></script>
+
 		</div>
 	</section>
 	<section class="main-advantages">
@@ -176,21 +178,6 @@ $news = get_posts(
 	</section>
 
 </main>
-
-<!-- popup form -->
-
-<div class="wrap"></div>
-<div id="window" class="popup-question-s">
-	<div class="popup-question-close">
-		close
-	</div>
-	<div class="details-form">
-		<p>
-			Спасибо!
-		</p>
-		</form>
-	</div>
-</div>
 
 <?php
 get_footer();

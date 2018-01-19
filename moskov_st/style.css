@@ -334,8 +334,13 @@ footer {
 
 .cards-container h1.page-title,
 .cards-container .term-description,
-.cards-container .woocommerce-result-count {
+.cards-container .woocommerce-result-count,
+.shop-section .sub-menu {
   display: none;
+}
+
+.shop-section .sub-menu.show {
+  display: block;
 }
 
 .cards figure {
@@ -1131,14 +1136,6 @@ main.woocommerce input.button.alt {
   # Content
   --------------------------------------------------------------*/
 
-  .main-map .text-box {
-    position: absolute;
-    left: 150px;
-    max-width: 360px;
-    padding: 100px 2em;
-    min-height: 720px;
-  }
-
   .main-map .text-box_title {
     margin: 0 0 2em 0;
   }
@@ -1177,9 +1174,7 @@ main.woocommerce input.button.alt {
   /*--------------------------------------------------------------
   # Content
   --------------------------------------------------------------*/
-  .main-map .container {
-    margin-left: 15%;
-  }
+
 
   /*--------------------------------------------------------------
   # Footer
@@ -1206,6 +1201,7 @@ main.woocommerce input.button.alt {
   # Content
   --------------------------------------------------------------*/
 
+  
   /*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/

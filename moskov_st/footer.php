@@ -45,7 +45,23 @@
 	</div>
 </footer>
 
+<!-- popup form -->
+
+<div class="wrap"></div>
+<div id="window" class="popup-question-s">
+	<div class="popup-question-close">
+		close
+	</div>
+	<div class="details-form">
+		<p>
+			Спасибо!
+		</p>
+		</form>
+	</div>
+</div>
+
 <?php wp_footer(); ?>
+
 
 </body>
 </html>
